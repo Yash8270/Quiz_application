@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Program Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #28a745; /* Green background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+        
+        .scroll-container {
+            overflow-y: auto;  /* Uncomment this line to enable the scrollbar */
+            max-height: 6000px; 
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            max-height: 600px;  /* Adjusted max-height for better visibility */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            overflow: auto;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+        }
+
+        .cancel-button {
+            background-color: #dc3545;
+        }
+
+        /* Hover effect on buttons */
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <h1>C-Program Quiz</h1>
+        <form action="/cquiz" method="post">
+        <div id="timer">Time remaining: <span id="countdown">30:00</span></div>
+        <div class="scroll-container">
+            <!-- Chemistry Questions -->
+
+<!-- Question 1 -->
+<div class="question">
+    <p>1. What does the acronym 'C' stand for in C programming language?</p>
+    <div class="options">
+        <input type="radio" name="q1" value="a"> a) Computer<br>
+        <input type="radio" name="q1" value="b"> b) Code<br>
+        <input type="radio" name="q1" value="c"> c) Central<br>
+        <input type="radio" name="q1" value="d"> d) Common<br>
+    </div>
+</div>
+
+
+
+<!-- Question 2 -->
+<div class="question">
+    <p>2. Which of the following is not a data type in C?</p>
+    <div class="options">
+        <input type="radio" name="q2" value="a"> a) int<br>
+        <input type="radio" name="q2" value="b"> b) float<br>
+        <input type="radio" name="q2" value="c"> c) string<br>
+        <input type="radio" name="q2" value="d"> d) char<br>
+    </div>
+</div>
+
+<!-- Question 3 -->
+<div class="question">
+    <p>3. How do you declare a pointer in C?</p>
+    <div class="options">
+        <input type="radio" name="q3" value="a"> a) point var_name;<br>
+        <input type="radio" name="q3" value="b"> b) ptr var_name;<br>
+        <input type="radio" name="q3" value="c"> c) int* var_name;<br>
+        <input type="radio" name="q3" value="d"> d) declare pointer var_name;<br>
+    </div>
+</div>
+
+
+
+<!-- Question 4 -->
+<div class="question">
+    <p>4. What is the size of the 'int' data type in C?</p>
+    <div class="options">
+        <input type="radio" name="q4" value="a"> a) 2 bytes<br>
+        <input type="radio" name="q4" value="b"> b) 4 bytes<br>
+        <input type="radio" name="q4" value="c"> c) 8 bytes<br>
+        <input type="radio" name="q4" value="d"> d) Depends on the compiler<br>
+    </div>
+</div>
+
+<!-- Question 5 -->
+<div class="question">
+    <p>5. What does the 'printf' function do in C?</p>
+    <div class="options">
+        <input type="radio" name="q5" value="a"> a) Scan input from the user<br>
+        <input type="radio" name="q5" value="b"> b) Print formatted output<br>
+        <input type="radio" name="q5" value="c"> c) Perform mathematical operations<br>
+        <input type="radio" name="q5" value="d"> d) None of the above<br>
+    </div>
+</div>
+
+<!-- Question 6 -->
+<div class="question">
+    <p>6. How do you open a file in C for writing?</p>
+    <div class="options">
+        <input type="radio" name="q6" value="a"> a) fopen("file.txt", "r");<br>
+        <input type="radio" name="q6" value="b"> b) fopen("file.txt", "w");<br>
+        <input type="radio" name="q6" value="c"> c) open("file.txt", O_WRONLY);<br>
+        <input type="radio" name="q6" value="d"> d) file_open("file.txt", "write");<br>
+    </div>
+</div>
+
+<!-- Question 7 -->
+<div class="question">
+    <p>7. What is the purpose of the 'break' statement in a switch statement?</p>
+    <div class="options">
+        <input type="radio" name="q7" value="a"> a) Exit the program<br>
+        <input type="radio" name="q7" value="b"> b) Jump to the next case<br>
+        <input type="radio" name="q7" value="c"> c) Exit the loop or switch statement<br>
+        <input type="radio" name="q7" value="d"> d) Print a message<br>
+    </div>
+</div>
+
+<!-- Question 8 -->
+<div class="question">
+    <p>8. What is the syntax for the 'for' loop in C?</p>
+    <div class="options">
+        <input type="radio" name="q8" value="a"> a) for (int i = 0; i < 10; i++)<br>
+        <input type="radio" name="q8" value="b"> b) loop (int i = 0; i < 10; i++)<br>
+        <input type="radio" name="q8" value="c"> c) repeat (int i = 0; i < 10; i++)<br>
+        <input type="radio" name="q8" value="d"> d) iterate (int i = 0; i < 10; i++)<br>
+    </div>
+</div>
+
+<!-- Question 9 -->
+<div class="question">
+    <p>9. What is the purpose of the 'malloc' function in C?</p>
+    <div class="options">
+        <input type="radio" name="q9" value="a"> a) Free allocated memory<br>
+        <input type="radio" name="q9" value="b"> b) Allocate memory<br>
+        <input type="radio" name="q9" value="c"> c) Execute system command<br>
+        <input type="radio" name="q9" value="d"> d) Print output to the console<br>
+    </div>
+</div>
+
+<!-- Question 10 -->
+<div class="question">
+    <p>10. What is the correct way to define a constant in C?</p>
+    <div class="options">
+        <input type="radio" name="q10" value="a"> a) const int PI = 3.14;<br>
+        <input type="radio" name="q10" value="b"> b) #define PI 3.14<br>
+        <input type="radio" name="q10" value="c"> c) constant PI = 3.14;<br>
+        <input type="radio" name="q10" value="d"> d) PI = 3.14 (constant);<br>
+    </div>
+</div>
+
+<!-- Question 11 -->
+<div class="question">
+    <p>11. What is the purpose of the 'sizeof' operator in C?</p>
+    <div class="options">
+        <input type="radio" name="q11" value="a"> a) Return the size of a variable or type<br>
+        <input type="radio" name="q11" value="b"> b) Find the square root<br>
+        <input type="radio" name="q11" value="c"> c) Determine the type of a variable<br>
+        <input type="radio" name="q11" value="d"> d) Allocate memory<br>
+    </div>
+</div>
+
+<!-- Question 12 -->
+<div class="question">
+    <p>12. What is the purpose of the 'continue' statement in a loop?</p>
+    <div class="options">
+        <input type="radio" name="q12" value="a"> a) Exit the loop<br>
+        <input type="radio" name="q12" value="b"> b) Jump to the next iteration of the loop<br>
+        <input type="radio" name="q12" value="c"> c) Start the loop again<br>
+        <input type="radio" name="q12" value="d"> d) Skip the next loop iteration<br>
+    </div>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <p>13. Which of the following is an example of a syntax error in C?</p>
+    <div class="options">
+        <input type="radio" name="q13" value="a"> a) int x = 10;<br>
+        <input type="radio" name="q13" value="b"> b) x = y + z;<br>
+        <input type="radio" name="q13" value="c"> c) printf("Hello, World!");<br>
+        <input type="radio" name="q13" value="d"> d) if (x > 5) {<br>
+    </div>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <p>14. How do you pass an array to a function in C?</p>
+    <div class="options">
+        <input type="radio" name="q14" value="a"> a) passArray(int arr[]);<br>
+        <input type="radio" name="q14" value="b"> b) passArray(int *arr);<br>
+        <input type="radio" name="q14" value="c"> c) passArray(int arr[5]);<br>
+        <input type="radio" name="q14" value="d"> d) passArray(arr);<br>
+    </div>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <p>15. What is the purpose of the 'strcmp' function in C?</p>
+    <div class="options">
+        <input type="radio" name="q15" value="a"> a) Concatenate strings<br>
+        <input type="radio" name="q15" value="b"> b) Compare strings<br>
+        <input type="radio" name="q15" value="c"> c) Copy strings<br>
+        <input type="radio" name="q15" value="d"> d) Convert strings to uppercase<br>
+    </div>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <p>16. What is the purpose of the 'typedef' keyword in C?</p>
+    <div class="options">
+        <input type="radio" name="q16" value="a"> a) Define a new data type<br>
+        <input type="radio" name="q16" value="b"> b) Declare a variable<br>
+        <input type="radio" name="q16" value="c"> c) Create a function<br>
+        <input type="radio" name="q16" value="d"> d) Terminate a program<br>
+    </div>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <p>17. How do you dynamically allocate memory in C?</p>
+    <div class="options">
+        <input type="radio" name="q17" value="a"> a) malloc()<br>
+        <input type="radio" name="q17" value="b"> b) allocate()<br>
+        <input type="radio" name="q17" value="c"> c) new()<br>
+        <input type="radio" name="q17" value="d"> d) alloc()<br>
+    </div>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <p>18. What is the purpose of the 'do-while' loop in C?</p>
+    <div class="options">
+        <input type="radio" name="q18" value="a"> a) Execute a block of code while a condition is true<br>
+        <input type="radio" name="q18" value="b"> b) Execute a block of code at least once<br>
+        <input type="radio" name="q18" value="c"> c) Repeat a block of code a specific number of times<br>
+        <input type="radio" name="q18" value="d"> d) Break out of a loop<br>
+    </div>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <p>19. What is the purpose of the 'union' in C?</p>
+    <div class="options">
+        <input type="radio" name="q19" value="a"> a) Combine two arrays<br>
+        <input type="radio" name="q19" value="b"> b) Combine two structures<br>
+        <input type="radio" name="q19" value="c"> c) Combine two functions<br>
+        <input type="radio" name="q19" value="d"> d) Combine two variables<br>
+    </div>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <p>20. Which of the following is a bitwise operator in C?</p>
+    <div class="options">
+        <input type="radio" name="q20" value="a"> a) &&<br>
+        <input type="radio" name="q20" value="b"> b) ||<br>
+        <input type="radio" name="q20" value="c"> c) &<br>
+        <input type="radio" name="q20" value="d"> d) |||<br>
+    </div>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <p>21. What is the purpose of the 'const' keyword in C?</p>
+    <div class="options">
+        <input type="radio" name="q21" value="a"> a) Declare a constant<br>
+        <input type="radio" name="q21" value="b"> b) Define a variable<br>
+        <input type="radio" name="q21" value="c"> c) Create an array<br>
+        <input type="radio" name="q21" value="d"> d) Dynamically allocate memory<br>
+    </div>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <p>22. How do you declare a structure in C?</p>
+    <div class="options">
+        <input type="radio" name="q22" value="a"> a) struct MyStruct { };<br>
+        <input type="radio" name="q22" value="b"> b) MyStruct = structure();<br>
+        <input type="radio" name="q22" value="c"> c) declare MyStruct;<br>
+        <input type="radio" name="q22" value="d"> d) structure MyStruct { };<br>
+    </div>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <p>23. What is the purpose of the 'static' keyword in C?</p>
+    <div class="options">
+        <input type="radio" name="q23" value="a"> a) Allocate memory dynamically<br>
+        <input type="radio" name="q23" value="b"> b) Make a variable local to a file<br>
+        <input type="radio" name="q23" value="c"> c) Define a constant<br>
+        <input type="radio" name="q23" value="d"> d) Make a variable global<br>
+    </div>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <p>24. What is the purpose of the 'NULL' pointer in C?</p>
+    <div class="options">
+        <input type="radio" name="q24" value="a"> a) Empty memory<br>
+        <input type="radio" name="q24" value="b"> b) Pointer to the base address<br>
+        <input type="radio" name="q24" value="c"> c) Undefined pointer<br>
+        <input type="radio" name="q24" value="d"> d) No value or undefined value<br>
+    </div>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <p>25. In C, what is the purpose of the 'typedef' keyword?</p>
+    <div class="options">
+        <input type="radio" name="q25" value="a"> a) Declare a new variable<br>
+        <input type="radio" name="q25" value="b"> b) Define a new data type<br>
+        <input type="radio" name="q25" value="c"> c) Create an alias for an existing data type<br>
+        <input type="radio" name="q25" value="d"> d) Allocate memory<br>
+    </div>
+</div>
+
+<!-- Question 26 -->
+<div class="question">
+    <p>26. What is the purpose of the 'volatile' keyword in C?</p>
+    <div class="options">
+        <input type="radio" name="q26" value="a"> a) Declare a constant<br>
+        <input type="radio" name="q26" value="b"> b) Indicate that a variable may be changed by multiple threads<br>
+        <input type="radio" name="q26" value="c"> c) Make a variable local to a function<br>
+        <input type="radio" name="q26" value="d"> d) Declare a global variable<br>
+    </div>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <p>27. How do you use the 'sizeof' operator to get the size of an array in C?</p>
+    <div class="options">
+        <input type="radio" name="q27" value="a"> a) sizeof(array);<br>
+        <input type="radio" name="q27" value="b"> b) sizeof(array[0]);<br>
+        <input type="radio" name="q27" value="c"> c) sizeof(array, sizeof(element));<br>
+        <input type="radio" name="q27" value="d"> d) size(array);<br>
+    </div>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <p>28. What is the purpose of the 'fgets' function in C?</p>
+    <div class="options">
+        <input type="radio" name="q28" value="a"> a) Print formatted output<br>
+        <input type="radio" name="q28" value="b"> b) Read a line from a file or standard input<br>
+        <input type="radio" name="q28" value="c"> c) Copy strings<br>
+        <input type="radio" name="q28" value="d"> d) Allocate memory<br>
+    </div>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <p>29. What is the purpose of the 'rand' function in C?</p>
+    <div class="options">
+        <input type="radio" name="q29" value="a"> a) Generate a random number<br>
+        <input type="radio" name="q29" value="b"> b) Return the remainder of a division<br>
+        <input type="radio" name="q29" value="c"> c) Round a floating-point number<br>
+        <input type="radio" name="q29" value="d"> d) Read a random line from a file<br>
+    </div>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <p>30. What is the purpose of the 'void' keyword in C?</p>
+    <div class="options">
+        <input type="radio" name="q30" value="a"> a) Declare a variable<br>
+        <input type="radio" name="q30" value="b"> b) Define a constant<br>
+        <input type="radio" name="q30" value="c"> c) Indicate that a function has no return value<br>
+        <input type="radio" name="q30" value="d"> d) Create a function<br>
+    </div>
+</div>
+
+<div class="action-buttons">
+    <button class="action-button submit-button" type="submit">Submit</button>
+    <button class="action-button cancel-button" type="submit">Cancel</button>
+</div>
+</div>
+</form>
+
+<script>
+    // Timer logic
+    var countdownElement = document.getElementById('countdown');
+    var countdown = 30 * 60; // 30 minutes in seconds
+    var score=0;
+    var quizResults;
+    function updateTimer() {
+        var minutes = Math.floor(countdown / 60);
+        var seconds = countdown % 60;
+        countdownElement.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+    function updateCountdown() {
+        if (countdown > 0) {
+            countdown--;
+            updateTimer();
+            setTimeout(updateCountdown, 1000); // Update every second
+        } else {
+            alert('Time is up! Submit your quiz.');
+            // Add logic to handle the end of the quiz
+        }
+    }
+
+    // Start the countdown when the page loads
+    updateCountdown();
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const score = calculateScore();
+        const originalDate = new Date(); // Get the current date and time
+       const year = originalDate.getFullYear();
+       const month = String(originalDate.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+      const day = String(originalDate.getDate()).padStart(2, '0');
+
+const submissionTime = `${year}-${month}-${day}`;
+
+        saveScore(score, submissionTime);
+    });
+
+    function calculateScore() {
+        const correctAnswers = ['a', 'b', 'a', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'a', 'a', 'a', 'b', 'd', 'd', 'a', 'b', 'a', 'b', 'a', 'c', 'b', 'a', 'c', 'a', 'c', 'a', 'd'];
+        let score = 0;
+
+        for (let i = 1; i <= 30; i++) {
+            const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedOption && selectedOption.value === correctAnswers[i - 1]) {
+                score++;
+            }
+        }
+
+        return score;
+    }
+
+    async function saveScore(score, submissionTime) {
+            const data = {
+                score: score,
+                submissionTime: submissionTime,
+            };
+
+            form.action = `/phyquiz`;  // Update the action without query parameters
+            form.method = 'post';
+
+            // Create hidden input fields to include score and submissionTime
+            const scoreInput = document.createElement('input');
+            scoreInput.type = 'hidden';
+            scoreInput.name = 'score';
+            scoreInput.value = score;
+            form.appendChild(scoreInput);
+
+            const submissionTimeInput = document.createElement('input');
+            submissionTimeInput.type = 'hidden';
+            submissionTimeInput.name = 'submissionTime';
+            submissionTimeInput.value = submissionTime;
+            form.appendChild(submissionTimeInput);
+
+            // Submit the form
+            form.submit();
+        }
+
+});
+</script>
+
+</body>
+</html>

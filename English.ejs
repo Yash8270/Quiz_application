@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #28a745; /* Green background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+        
+        .scroll-container {
+            overflow-y: auto;  /* Uncomment this line to enable the scrollbar */
+            max-height: 6000px; 
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            max-height: 600px;  /* Adjusted max-height for better visibility */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            overflow: auto;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+        }
+
+        .cancel-button {
+            background-color: #dc3545;
+        }
+
+        /* Hover effect on buttons */
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz-container">
+        <h1>English Quiz</h1>
+        <form action="/engquiz" method="post">
+        <div id="timer">Time remaining: <span id="countdown">30:00</span></div>
+        <div class="scroll-container">
+            <!-- English Questions -->
+<!-- Question 1 -->
+<div class="question">
+    <p>1. What is the correct plural form of "child"?</p>
+    <div class="options">
+        <input type="radio" name="q1" value="a"> a) Childs<br>
+        <input type="radio" name="q1" value="b"> b) Childes<br>
+        <input type="radio" name="q1" value="c"> c) Children<br>
+        <input type="radio" name="q1" value="d"> d) Childies<br>
+    </div>
+</div>
+<!-- Question 2 -->
+<div class="question">
+    <p>2. Identify the sentence with the correct use of "their," "there," and "they're."</p>
+    <div class="options">
+        <input type="radio" name="q2" value="a"> a) Their going to the park.<br>
+        <input type="radio" name="q2" value="b"> b) There going to the park.<br>
+        <input type="radio" name="q2" value="c"> c) They're going to the park.<br>
+        <input type="radio" name="q2" value="d"> d) Theyre going to the park.<br>
+    </div>
+</div>
+<!-- Question 3 -->
+<div class="question">
+    <p>3. Choose the correct form of the verb: "She _____ to the store yesterday."</p>
+    <div class="options">
+        <input type="radio" name="q3" value="a"> a) Go<br>
+        <input type="radio" name="q3" value="b"> b) Went<br>
+        <input type="radio" name="q3" value="c"> c) Gone<br>
+        <input type="radio" name="q3" value="d"> d) Goes<br>
+    </div>
+</div>
+<!-- Question 4 -->
+<div class="question">
+    <p>4. What is the plural form of "ox"?</p>
+    <div class="options">
+        <input type="radio" name="q4" value="a"> a) Oxen<br>
+        <input type="radio" name="q4" value="b"> b) Oxes<br>
+        <input type="radio" name="q4" value="c"> c) Oxies<br>
+        <input type="radio" name="q4" value="d"> d) Oxi<br>
+    </div>
+</div>
+<!-- Question 5 -->
+<div class="question">
+    <p>5. Which of the following is a conjunction?</p>
+    <div class="options">
+        <input type="radio" name="q5" value="a"> a) Run<br>
+        <input type="radio" name="q5" value="b"> b) Quickly<br>
+        <input type="radio" name="q5" value="c"> c) And<br>
+        <input type="radio" name="q5" value="d"> d) Happy<br>
+    </div>
+</div>
+<!-- Question 6 -->
+<div class="question">
+    <p>6. Identify the antonym of "benevolent."</p>
+    <div class="options">
+        <input type="radio" name="q6" value="a"> a) Kind<br>
+        <input type="radio" name="q6" value="b"> b) Malevolent<br>
+        <input type="radio" name="q6" value="c"> c) Generous<br>
+        <input type="radio" name="q6" value="d"> d) Compassionate<br>
+    </div>
+</div>
+<!-- Question 7 -->
+<div class="question">
+    <p>7. Which word is a synonym for "ubiquitous"?</p>
+    <div class="options">
+        <input type="radio" name="q7" value="a"> a) Scarce<br>
+        <input type="radio" name="q7" value="b"> b) Abundant<br>
+        <input type="radio" name="q7" value="c"> c) Rare<br>
+        <input type="radio" name="q7" value="d"> d) Limited<br>
+    </div>
+</div>
+<!-- Question 8 -->
+<div class="question">
+    <p>8. Choose the correct form of the possessive pronoun: "That book is _____."</p>
+    <div class="options">
+        <input type="radio" name="q8" value="a"> a) Him<br>
+        <input type="radio" name="q8" value="b"> b) His<br>
+        <input type="radio" name="q8" value="c"> c) He<br>
+        <input type="radio" name="q8" value="d"> d) He's<br>
+    </div>
+</div>
+<!-- Question 9 -->
+<div class="question">
+    <p>9. Identify the sentence with correct punctuation:</p>
+    <div class="options">
+        <input type="radio" name="q9" value="a"> a) The cat is black it has green eyes.<br>
+        <input type="radio" name="q9" value="b"> b) The cat is black, it has green eyes.<br>
+        <input type="radio" name="q9" value="c"> c) The cat is black; it has green eyes.<br>
+        <input type="radio" name="q9" value="d"> d) The cat is black it has green eyes.<br>
+    </div>
+</div>
+<!-- Question 10 -->
+<div class="question">
+    <p>10. What is the past tense of "eat"?</p>
+    <div class="options">
+        <input type="radio" name="q10" value="a"> a) Ate<br>
+        <input type="radio" name="q10" value="b"> b) Eated<br>
+        <input type="radio" name="q10" value="c"> c) Eat<br>
+        <input type="radio" name="q10" value="d"> d) Eaten<br>
+    </div>
+</div>
+<!-- Question 11 -->
+<div class="question">
+    <p>11. What is the correct spelling?</p>
+    <div class="options">
+        <input type="radio" name="q11" value="a"> a) Occassion<br>
+        <input type="radio" name="q11" value="b"> b) Occasion<br>
+        <input type="radio" name="q11" value="c"> c) Ocassion<br>
+        <input type="radio" name="q11" value="d"> d) Occasssion<br>
+    </div>
+</div>
+<!-- Question 12 -->
+<div class="question">
+    <p>12. Choose the correct form of "your" or "you're": "_____ my best friend."</p>
+    <div class="options">
+        <input type="radio" name="q12" value="a"> a) Your<br>
+        <input type="radio" name="q12" value="b"> b) You're<br>
+        <input type="radio" name="q12" value="c"> c) Yours<br>
+        <input type="radio" name="q12" value="d"> d) Youres<br>
+    </div>
+</div>
+<!-- Question 13 -->
+<div class="question">
+    <p>13. What is the meaning of "ephemeral"?</p>
+    <div class="options">
+        <input type="radio" name="q13" value="a"> a) Lasting a very short time<br>
+        <input type="radio" name="q13" value="b"> b) Eternal<br>
+        <input type="radio" name="q13" value="c"> c) Permanent<br>
+        <input type="radio" name="q13" value="d"> d) Massive<br>
+    </div>
+</div>
+<!-- Question 14 -->
+<div class="question">
+    <p>14. Identify the sentence with correct subject-verb agreement:</p>
+    <div class="options">
+        <input type="radio" name="q14" value="a"> a) The team are playing well.<br>
+        <input type="radio" name="q14" value="b"> b) The team is playing well.<br>
+        <input type="radio" name="q14" value="c"> c) The team am playing well.<br>
+        <input type="radio" name="q14" value="d"> d) The team be playing well.<br>
+    </div>
+</div>
+<!-- Question 15 -->
+<div class="question">
+    <p>15. What is the correct order of the following words: "happy," "are," "you," "today?"</p>
+    <div class="options">
+        <input type="radio" name="q15" value="a"> a) Happy are you today?<br>
+        <input type="radio" name="q15" value="b"> b) You are happy today?<br>
+        <input type="radio" name="q15" value="c"> c) Today you are happy?<br>
+        <input type="radio" name="q15" value="d"> d) Happy you are today?<br>
+    </div>
+</div>
+<!-- Question 16 -->
+<div class="question">
+    <p>16. What is the meaning of "alacrity"?</p>
+    <div class="options">
+        <input type="radio" name="q16" value="a"> a) Laziness<br>
+        <input type="radio" name="q16" value="b"> b) Eagerness<br>
+        <input type="radio" name="q16" value="c"> c) Sadness<br>
+        <input type="radio" name="q16" value="d"> d) Anger<br>
+    </div>
+</div>
+<!-- Question 17 -->
+<div class="question">
+    <p>17. Which word is a synonym for "ephemeral"?</p>
+    <div class="options">
+        <input type="radio" name="q17" value="a"> a) Lasting<br>
+        <input type="radio" name="q17" value="b"> b) Permanent<br>
+        <input type="radio" name="q17" value="c"> c) Eternal<br>
+        <input type="radio" name="q17" value="d"> d) Temporary<br>
+    </div>
+</div>
+<!-- Question 18 -->
+<div class="question">
+    <p>18. Choose the correct form of the verb: "I _____ the movie last night."</p>
+    <div class="options">
+        <input type="radio" name="q18" value="a"> a) Watch<br>
+        <input type="radio" name="q18" value="b"> b) Watching<br>
+        <input type="radio" name="q18" value="c"> c) Watched<br>
+        <input type="radio" name="q18" value="d"> d) Watches<br>
+    </div>
+</div>
+<!-- Question 19 -->
+<div class="question">
+    <p>19. What is the correct form of the comparative adjective: "good"?</p>
+    <div class="options">
+        <input type="radio" name="q19" value="a"> a) Gooder<br>
+        <input type="radio" name="q19" value="b"> b) Better<br>
+        <input type="radio" name="q19" value="c"> c) Best<br>
+        <input type="radio" name="q19" value="d"> d) Goods<br>
+    </div>
+</div>
+<!-- Question 20 -->
+<div class="question">
+    <p>20. What is the correct order of the following words: "ran," "quickly," "she," "to the store"?</p>
+    <div class="options">
+        <input type="radio" name="q20" value="a"> a) She ran quickly to the store.<br>
+        <input type="radio" name="q20" value="b"> b) Ran she to the store quickly.<br>
+        <input type="radio" name="q20" value="c"> c) To the store she ran quickly.<br>
+        <input type="radio" name="q20" value="d"> d) Quickly she ran to the store.<br>
+    </div>
+</div>
+<!-- Question 21 -->
+<div class="question">
+    <p>21. What is the correct spelling?</p>
+    <div class="options">
+        <input type="radio" name="q21" value="a"> a) Embarrassment<br>
+        <input type="radio" name="q21" value="b"> b) Embarassment<br>
+        <input type="radio" name="q21" value="c"> c) Embarrasment<br>
+        <input type="radio" name="q21" value="d"> d) Embarrasssment<br>
+    </div>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <p>22. Choose the correct form of the adverb: "She played the violin _____."</p>
+    <div class="options">
+        <input type="radio" name="q22" value="a"> a) Good<br>
+        <input type="radio" name="q22" value="b"> b) Well<br>
+        <input type="radio" name="q22" value="c"> c) Better<br>
+        <input type="radio" name="q22" value="d"> d) Best<br>
+    </div>
+</div>
+<!-- Question 23 -->
+<div class="question">
+    <p>23. Identify the sentence with the correct use of "its" and "it's."</p>
+    <div class="options">
+        <input type="radio" name="q23" value="a"> a) The dog wagged it's tail.<br>
+        <input type="radio" name="q23" value="b"> b) Its a beautiful day.<br>
+        <input type="radio" name="q23" value="c"> c) The cat licked it's paws.<br>
+        <input type="radio" name="q23" value="d"> d) The bird built its nest in the tree.<br>
+    </div>
+</div>
+<!-- Question 24 -->
+<div class="question">
+    <p>24. What is the correct form of the adjective: "This is the _____ day of my life."</p>
+    <div class="options">
+        <input type="radio" name="q24" value="a"> a) Good<br>
+        <input type="radio" name="q24" value="b"> b) Better<br>
+        <input type="radio" name="q24" value="c"> c) Best<br>
+        <input type="radio" name="q24" value="d"> d) Goods<br>
+    </div>
+</div>
+<!-- Question 25 -->
+<div class="question">
+    <p>25. What is the correct form of the verb: "They _____ to the party last night."</p>
+    <div class="options">
+        <input type="radio" name="q25" value="a"> a) Goes<br>
+        <input type="radio" name="q25" value="b"> b) Goed<br>
+        <input type="radio" name="q25" value="c"> c) Gone<br>
+        <input type="radio" name="q25" value="d"> d) Went<br>
+    </div>
+</div>
+<!-- Question 26 -->
+<div class="question">
+    <p>26. Identify the sentence with correct use of commas:</p>
+    <div class="options">
+        <input type="radio" name="q26" value="a"> a) My favorite colors are blue green and red.<br>
+        <input type="radio" name="q26" value="b"> b) My favorite colors are blue, green, and red.<br>
+        <input type="radio" name="q26" value="c"> c) My favorite colors are blue green, and red.<br>
+        <input type="radio" name="q26" value="d"> d) My favorite colors are blue, green and, red.<br>
+    </div>
+</div>
+<!-- Question 27 -->
+<div class="question">
+    <p>27. What is the correct form of the adjective: "The weather is _____ today."</p>
+    <div class="options">
+        <input type="radio" name="q27" value="a"> a) Good<br>
+        <input type="radio" name="q27" value="b"> b) Better<br>
+        <input type="radio" name="q27" value="c"> c) Best<br>
+        <input type="radio" name="q27" value="d"> d) Well<br>
+    </div>
+</div>
+<!-- Question 28 -->
+<div class="question">
+    <p>28. What is the correct order of the following words: "sang," "beautifully," "she," "last night"?</p>
+    <div class="options">
+        <input type="radio" name="q28" value="a"> a) She sang beautifully last night.<br>
+        <input type="radio" name="q28" value="b"> b) Sang she beautifully last night.<br>
+        <input type="radio" name="q28" value="c"> c) Last night she sang beautifully.<br>
+        <input type="radio" name="q28" value="d"> d) Beautifully sang she last night.<br>
+    </div>
+</div>
+<!-- Question 29 -->
+<div class="question">
+    <p>29. Choose the correct form of the verb: "He _____ all the way to the top of the mountain."</p>
+    <div class="options">
+        <input type="radio" name="q29" value="a"> a) Climbed<br>
+        <input type="radio" name="q29" value="b"> b) Climb<br>
+        <input type="radio" name="q29" value="c"> c) Climbs<br>
+        <input type="radio" name="q29" value="d"> d) Climbing<br>
+    </div>
+</div>
+<!-- Question 30 -->
+<div class="question">
+    <p>30. What is the correct form of the comparative adjective: "far"?</p>
+    <div class="options">
+        <input type="radio" name="q30" value="a"> a) Far<br>
+        <input type="radio" name="q30" value="b"> b) Farest<br>
+        <input type="radio" name="q30" value="c"> c) Farther<br>
+        <input type="radio" name="q30" value="d"> d) Farring<br>
+    </div>
+</div>
+
+<div class="action-buttons">
+    <button class="action-button submit-button" type="submit">Submit</button>
+    <button class="action-button cancel-button" type="submit">Cancel</button>
+</div>
+</div>
+</form>
+
+<script>
+    // Timer logic
+    var countdownElement = document.getElementById('countdown');
+    var countdown = 30 * 60; // 30 minutes in seconds
+    var score=0;
+    var quizResults;
+    function updateTimer() {
+        var minutes = Math.floor(countdown / 60);
+        var seconds = countdown % 60;
+        countdownElement.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+    function updateCountdown() {
+        if (countdown > 0) {
+            countdown--;
+            updateTimer();
+            setTimeout(updateCountdown, 1000); // Update every second
+        } else {
+            alert('Time is up! Submit your quiz.');
+            // Add logic to handle the end of the quiz
+        }
+    }
+
+    // Start the countdown when the page loads
+    updateCountdown();
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const score = calculateScore();
+        const originalDate = new Date(); // Get the current date and time
+       const year = originalDate.getFullYear();
+       const month = String(originalDate.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+      const day = String(originalDate.getDate()).padStart(2, '0');
+
+const submissionTime = `${year}-${month}-${day}`;
+
+        saveScore(score, submissionTime);
+    });
+
+    function calculateScore() {
+        const correctAnswers = ['a', 'b', 'a', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'a', 'a', 'a', 'b', 'd', 'd', 'a', 'b', 'a', 'b', 'a', 'c', 'b', 'a', 'c', 'a', 'c', 'a', 'd'];
+        let score = 0;
+
+        for (let i = 1; i <= 30; i++) {
+            const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedOption && selectedOption.value === correctAnswers[i - 1]) {
+                score++;
+            }
+        }
+
+        return score;
+    }
+
+    async function saveScore(score, submissionTime) {
+            const data = {
+                score: score,
+                submissionTime: submissionTime,
+            };
+
+            form.action = `/phyquiz`;  // Update the action without query parameters
+            form.method = 'post';
+
+            // Create hidden input fields to include score and submissionTime
+            const scoreInput = document.createElement('input');
+            scoreInput.type = 'hidden';
+            scoreInput.name = 'score';
+            scoreInput.value = score;
+            form.appendChild(scoreInput);
+
+            const submissionTimeInput = document.createElement('input');
+            submissionTimeInput.type = 'hidden';
+            submissionTimeInput.name = 'submissionTime';
+            submissionTimeInput.value = submissionTime;
+            form.appendChild(submissionTimeInput);
+
+            // Submit the form
+            form.submit();
+        }
+
+});
+</script>
+
+</body>
+</html>

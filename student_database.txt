@@ -1,0 +1,22 @@
+CREATE TABLE sinfo (
+ name varchar(50),
+ age int,
+ email varchar(50) unique,
+ userid varchar(20),
+ password varchar(15),
+ PRIMARY KEY (userid));
+
+CREATE TABLE quiz (subject varchar(20) PRIMARY KEY);
+
+INSERT INTO quiz VALUES ('Physics','Chemistry','Biology','C-Program','English');
+
+CREATE TABLE applies (
+ userid varchar(20),
+ subject varchar(20),
+ total int,
+ marks int,
+ time date,
+ FOREIGN KEY (userid) REFERENCES sinfo(userid),
+ FOREIGN KEY (subject) REFERENCES quiz(subject),
+ PRIMARY KEY (userid, subject));
+

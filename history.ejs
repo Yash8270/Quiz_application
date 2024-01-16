@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Data</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #28a745; /* Green background color */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    table {
+      max-width: 1000px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #28a745;
+      color: #fff;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .apply-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .apply-link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+  </style>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Subject</th>
+        <th>Total Marks</th>
+        <th>Right Marks</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% quizData.forEach(function(results) { %>
+        <tr>
+          <td><%= results.userid %></td>
+          <td><%= results.subject %></td>
+          <td><%= results.total %></td>
+          <td><%= results.marks %></td>
+          <td><%= results.time %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <div class="apply-link">
+    <a href="/apply">Apply for Exams</a>
+ </div>
+
+</body>
+</html>
+

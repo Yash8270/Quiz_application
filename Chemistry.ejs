@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #28a745; /* Green background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+        
+        .scroll-container {
+            overflow-y: auto;  /* Uncomment this line to enable the scrollbar */
+            max-height: 6000px; 
+        }
+
+        .quiz-container {
+            max-width: 1000px;
+            max-height: 600px;  /* Adjusted max-height for better visibility */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            overflow: auto;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+        }
+
+        .cancel-button {
+            background-color: #dc3545;
+        }
+
+        /* Hover effect on buttons */
+        .action-button:hover {
+            transform: scale(1.1);
+        }
+
+        #timer {
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Chemistry Quiz</h1>
+    <form action="/chemquiz" method="post">
+    <div id="timer">Time remaining: <span id="countdown">30:00</span></div>
+    <div class="scroll-container">
+        <!-- Chemistry Questions -->
+        <div class="question">
+            <p>1. What is the chemical symbol for gold?</p>
+            <div class="options">
+                <input type="radio" name="q1" value="a"> a) Au<br>
+                <input type="radio" name="q1" value="b"> b) Ag<br>
+                <input type="radio" name="q1" value="c"> c) Fe<br>
+                <input type="radio" name="q1" value="d"> d) Cu<br>
+            </div>
+        </div>
+
+        <div class="question">
+            <p>2. What is the lightest element?</p>
+            <div class="options">
+                <input type="radio" name="q2" value="a"> a) Hydrogen<br>
+                <input type="radio" name="q2" value="b"> b) Helium<br>
+                <input type="radio" name="q2" value="c"> c) Oxygen<br>
+                <input type="radio" name="q2" value="d"> d) Nitrogen<br>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+<div class="question">
+    <p>3. Which gas is responsible for the greenhouse effect?</p>
+    <div class="options">
+        <input type="radio" name="q3" value="a"> a) Oxygen<br>
+        <input type="radio" name="q3" value="b"> b) Nitrogen<br>
+        <input type="radio" name="q3" value="c"> c) Carbon Dioxide<br>
+        <input type="radio" name="q3" value="d"> d) Hydrogen<br>
+    </div>
+</div>
+
+<!-- Question 4 -->
+<div class="question">
+    <p>4. What is the chemical symbol for water?</p>
+    <div class="options">
+        <input type="radio" name="q4" value="a"> a) Wt<br>
+        <input type="radio" name="q4" value="b"> b) H2O<br>
+        <input type="radio" name="q4" value="c"> c) CO2<br>
+        <input type="radio" name="q4" value="d"> d) O2<br>
+    </div>
+</div>
+
+<!-- Question 5 -->
+<div class="question">
+    <p>5. What is Avogadro's number?</p>
+    <div class="options">
+        <input type="radio" name="q5" value="a"> a) 6.02 × 10^23<br>
+        <input type="radio" name="q5" value="b"> b) 3.14<br>
+        <input type="radio" name="q5" value="c"> c) 1.21 × 10^6<br>
+        <input type="radio" name="q5" value="d"> d) 9.8<br>
+    </div>
+</div>
+
+<!-- Question 6 -->
+<div class="question">
+    <p>6. What is the pH value of a neutral solution?</p>
+    <div class="options">
+        <input type="radio" name="q6" value="a"> a) 0<br>
+        <input type="radio" name="q6" value="b"> b) 7<br>
+        <input type="radio" name="q6" value="c"> c) 14<br>
+        <input type="radio" name="q6" value="d"> d) 5<br>
+    </div>
+</div>
+
+<!-- Question 7 -->
+<div class="question">
+    <p>7. Which element is essential for organic compounds?</p>
+    <div class="options">
+        <input type="radio" name="q7" value="a"> a) Iron<br>
+        <input type="radio" name="q7" value="b"> b) Carbon<br>
+        <input type="radio" name="q7" value="c"> c) Gold<br>
+        <input type="radio" name="q7" value="d"> d) Silver<br>
+    </div>
+</div>
+
+<!-- Question 8 -->
+<div class="question">
+    <p>8. What is the chemical symbol for sodium?</p>
+    <div class="options">
+        <input type="radio" name="q8" value="a"> a) So<br>
+        <input type="radio" name="q8" value="b"> b) Na<br>
+        <input type="radio" name="q8" value="c"> c) Sn<br>
+        <input type="radio" name="q8" value="d"> d) Ni<br>
+    </div>
+</div>
+
+<!-- Question 9 -->
+<div class="question">
+    <p>9. Which gas is known as laughing gas?</p>
+    <div class="options">
+        <input type="radio" name="q9" value="a"> a) Oxygen<br>
+        <input type="radio" name="q9" value="b"> b) Nitrous Oxide<br>
+        <input type="radio" name="q9" value="c"> c) Hydrogen<br>
+        <input type="radio" name="q9" value="d"> d) Methane<br>
+    </div>
+</div>
+
+<!-- Question 10 -->
+<div class="question">
+    <p>10. What is the chemical symbol for silver?</p>
+    <div class="options">
+        <input type="radio" name="q10" value="a"> a) Si<br>
+        <input type="radio" name="q10" value="b"> b) Ag<br>
+        <input type="radio" name="q10" value="c"> c) Au<br>
+        <input type="radio" name="q10" value="d"> d) Sr<br>
+    </div>
+</div>
+
+<!-- Question 11 -->
+<div class="question">
+    <p>11. What is the chemical formula for methane?</p>
+    <div class="options">
+        <input type="radio" name="q11" value="a"> a) CH4<br>
+        <input type="radio" name="q11" value="b"> b) CO2<br>
+        <input type="radio" name="q11" value="c"> c) C2H6<br>
+        <input type="radio" name="q11" value="d"> d) H2O<br>
+    </div>
+</div>
+
+<!-- Question 12 -->
+<div class="question">
+    <p>12. What is the chemical symbol for potassium?</p>
+    <div class="options">
+        <input type="radio" name="q12" value="a"> a) K<br>
+        <input type="radio" name="q12" value="b"> b) P<br>
+        <input type="radio" name="q12" value="c"> c) Po<br>
+        <input type="radio" name="q12" value="d"> d) Ke<br>
+    </div>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <p>13. What is the process of converting a gas into a liquid called?</p>
+    <div class="options">
+        <input type="radio" name="q13" value="a"> a) Evaporation<br>
+        <input type="radio" name="q13" value="b"> b) Condensation<br>
+        <input type="radio" name="q13" value="c"> c) Sublimation<br>
+        <input type="radio" name="q13" value="d"> d) Vaporization<br>
+    </div>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <p>14. Which gas is responsible for the smell of rotten eggs?</p>
+    <div class="options">
+        <input type="radio" name="q14" value="a"> a) Oxygen<br>
+        <input type="radio" name="q14" value="b"> b) Hydrogen Sulfide<br>
+        <input type="radio" name="q14" value="c"> c) Carbon Dioxide<br>
+        <input type="radio" name="q14" value="d"> d) Nitrous Oxide<br>
+    </div>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <p>15. What is the chemical symbol for iron?</p>
+    <div class="options">
+        <input type="radio" name="q15" value="a"> a) Ir<br>
+        <input type="radio" name="q15" value="b"> b) Fe<br>
+        <input type="radio" name="q15" value="c"> c) In<br>
+        <input type="radio" name="q15" value="d"> d) Ni<br>
+    </div>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <p>16. Which gas is used in the photosynthesis process of plants?</p>
+    <div class="options">
+        <input type="radio" name="q16" value="a"> a) Oxygen<br>
+        <input type="radio" name="q16" value="b"> b) Nitrogen<br>
+        <input type="radio" name="q16" value="c"> c) Carbon Dioxide<br>
+        <input type="radio" name="q16" value="d"> d) Hydrogen<br>
+    </div>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <p>17. What is the chemical symbol for copper?</p>
+    <div class="options">
+        <input type="radio" name="q17" value="a"> a) Co<br>
+        <input type="radio" name="q17" value="b"> b) Cu<br>
+        <input type="radio" name="q17" value="c"> c) Cr<br>
+        <input type="radio" name="q17" value="d"> d) Ca<br>
+    </div>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <p>18. What is the boiling point of water in Celsius?</p>
+    <div class="options">
+        <input type="radio" name="q18" value="a"> a) 100°C<br>
+        <input type="radio" name="q18" value="b"> b) 0°C<br>
+        <input type="radio" name="q18" value="c"> c) -100°C<br>
+        <input type="radio" name="q18" value="d"> d) 50°C<br>
+    </div>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <p>19. What is the chemical symbol for neon?</p>
+    <div class="options">
+        <input type="radio" name="q19" value="a"> a) Ne<br>
+        <input type="radio" name="q19" value="b"> b) Na<br>
+        <input type="radio" name="q19" value="c"> c) Ni<br>
+        <input type="radio" name="q19" value="d"> d) N<br>
+    </div>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <p>20. What is the process of rusting of iron called?</p>
+    <div class="options">
+        <input type="radio" name="q20" value="a"> a) Corrosion<br>
+        <input type="radio" name="q20" value="b"> b) Oxidation<br>
+        <input type="radio" name="q20" value="c"> c) Evaporation<br>
+        <input type="radio" name="q20" value="d"> d) Sublimation<br>
+    </div>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <p>21. What is the chemical formula for table salt?</p>
+    <div class="options">
+        <input type="radio" name="q21" value="a"> a) NaCl<br>
+        <input type="radio" name="q21" value="b"> b) KCl<br>
+        <input type="radio" name="q21" value="c"> c) HCl<br>
+        <input type="radio" name="q21" value="d"> d) MgCl2<br>
+    </div>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <p>22. What is the chemical symbol for mercury?</p>
+    <div class="options">
+        <input type="radio" name="q22" value="a"> a) Mg<br>
+        <input type="radio" name="q22" value="b"> b) Hg<br>
+        <input type="radio" name="q22" value="c"> c) Me<br>
+        <input type="radio" name="q22" value="d"> d) Mn<br>
+    </div>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <p>23. Which gas is known as the "suffocating gas"?</p>
+    <div class="options">
+        <input type="radio" name="q23" value="a"> a) Oxygen<br>
+        <input type="radio" name="q23" value="b"> b) Carbon Dioxide<br>
+        <input type="radio" name="q23" value="c"> c) Nitrogen<br>
+        <input type="radio" name="q23" value="d"> d) Hydrogen<br>
+    </div>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <p>24. What is the chemical formula for hydrogen peroxide?</p>
+    <div class="options">
+        <input type="radio" name="q24" value="a"> a) HO<br>
+        <input type="radio" name="q24" value="b"> b) H2O2<br>
+        <input type="radio" name="q24" value="c"> c) H2O<br>
+        <input type="radio" name="q24" value="d"> d) HO2<br>
+    </div>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <p>25. What is the chemical symbol for nitrogen?</p>
+    <div class="options">
+        <input type="radio" name="q25" value="a"> a) Ni<br>
+        <input type="radio" name="q25" value="b"> b) N<br>
+        <input type="radio" name="q25" value="c"> c) Na<br>
+        <input type="radio" name="q25" value="d"> d) Ne<br>
+    </div>
+</div>
+
+<!-- Question 26 -->
+<div class="question">
+    <p>26. Which element is a noble gas?</p>
+    <div class="options">
+        <input type="radio" name="q26" value="a"> a) Neon<br>
+        <input type="radio" name="q26" value="b"> b) Nitrogen<br>
+        <input type="radio" name="q26" value="c"> c) Nickel<br>
+        <input type="radio" name="q26" value="d"> d) Sodium<br>
+    </div>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <p>27. What is the chemical symbol for gold?</p>
+    <div class="options">
+        <input type="radio" name="q27" value="a"> a) Go<br>
+        <input type="radio" name="q27" value="b"> b) Au<br>
+        <input type="radio" name="q27" value="c"> c) Ag<br>
+        <input type="radio" name="q27" value="d"> d) Ge<br>
+    </div>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <p>28. Which gas is produced during cellular respiration?</p>
+    <div class="options">
+        <input type="radio" name="q28" value="a"> a) Oxygen<br>
+        <input type="radio" name="q28" value="b"> b) Carbon Dioxide<br>
+        <input type="radio" name="q28" value="c"> c) Hydrogen<br>
+        <input type="radio" name="q28" value="d"> d) Nitrogen<br>
+    </div>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <p>29. What is the chemical symbol for lead?</p>
+    <div class="options">
+        <input type="radio" name="q29" value="a"> a) Ld<br>
+        <input type="radio" name="q29" value="b"> b) Li<br>
+        <input type="radio" name="q29" value="c"> c) Pb<br>
+        <input type="radio" name="q29" value="d"> d) Pt<br>
+    </div>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <p>30. Which element is the lightest?</p>
+    <div class="options">
+        <input type="radio" name="q30" value="a"> a) Hydrogen<br>
+        <input type="radio" name="q30" value="b"> b) Helium<br>
+        <input type="radio" name="q30" value="c"> c) Neon<br>
+        <input type="radio" name="q30" value="d"> d) Oxygen<br>
+    </div>
+</div>
+
+    <!-- Action buttons -->
+    <div class="action-buttons">
+        <button class="action-button submit-button" type="submit">Submit</button>
+        <button class="action-button cancel-button" type="submit">Cancel</button>
+    </div>
+</div>
+</form>
+
+<script>
+    // Timer logic
+    var countdownElement = document.getElementById('countdown');
+    var countdown = 30 * 60; // 30 minutes in seconds
+    var score=0;
+    var quizResults;
+    function updateTimer() {
+        var minutes = Math.floor(countdown / 60);
+        var seconds = countdown % 60;
+        countdownElement.textContent = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+    }
+
+    function updateCountdown() {
+        if (countdown > 0) {
+            countdown--;
+            updateTimer();
+            setTimeout(updateCountdown, 1000); // Update every second
+        } else {
+            alert('Time is up! Submit your quiz.');
+            // Add logic to handle the end of the quiz
+        }
+    }
+
+    // Start the countdown when the page loads
+    updateCountdown();
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const score = calculateScore();
+        const originalDate = new Date(); // Get the current date and time
+       const year = originalDate.getFullYear();
+       const month = String(originalDate.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+      const day = String(originalDate.getDate()).padStart(2, '0');
+
+const submissionTime = `${year}-${month}-${day}`;
+
+        saveScore(score, submissionTime);
+    });
+
+    function calculateScore() {
+        const correctAnswers = ['a', 'b', 'a', 'a', 'a', 'b', 'a', 'b', 'a', 'a', 'a', 'a', 'a', 'b', 'd', 'd', 'a', 'b', 'a', 'b', 'a', 'c', 'b', 'a', 'c', 'a', 'c', 'a', 'd'];
+        let score = 0;
+
+        for (let i = 1; i <= 30; i++) {
+            const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedOption && selectedOption.value === correctAnswers[i - 1]) {
+                score++;
+            }
+        }
+
+        return score;
+    }
+
+    async function saveScore(score, submissionTime) {
+            const data = {
+                score: score,
+                submissionTime: submissionTime,
+            };
+
+            form.action = `/phyquiz`;  // Update the action without query parameters
+            form.method = 'post';
+
+            // Create hidden input fields to include score and submissionTime
+            const scoreInput = document.createElement('input');
+            scoreInput.type = 'hidden';
+            scoreInput.name = 'score';
+            scoreInput.value = score;
+            form.appendChild(scoreInput);
+
+            const submissionTimeInput = document.createElement('input');
+            submissionTimeInput.type = 'hidden';
+            submissionTimeInput.name = 'submissionTime';
+            submissionTimeInput.value = submissionTime;
+            form.appendChild(submissionTimeInput);
+
+            // Submit the form
+            form.submit();
+        }
+
+});
+</script>
+
+</body>
+</html>
